@@ -660,11 +660,11 @@ main ul ul li {
 
 /*******FOOTER*******/
 footer {
-    position: absolute;
-    bottom: 0;
+    position: static;
     font-size: 60%;
     height: 3em;
     text-align: right;
+    margin-top: auto;
 }
 
 
