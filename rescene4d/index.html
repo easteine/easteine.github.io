@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes [CVPR 2026]" />
+    <meta
+      name="keywords"
+      content="4D semantic segmentation, 3D scene understanding, instance segmentation, indoor scenes, temporal consistency, CVPR"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <title>ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔀</text></svg>"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-1FWSVCGZTG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "G-1FWSVCGZTG");
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/bulma.min.css" />
+    <link rel="stylesheet" href="./css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./css/twentytwenty.css" />
+    <link rel="stylesheet" href="./css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="./css/index-v5.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+    <style>
+      .control-label { font-weight: 600; margin-right: 0.5rem; }
+      .baseline-button { margin: 0 0.25rem; padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid #ccc; background: #f5f5f5; cursor: pointer; font-size: 0.9rem; }
+      .baseline-button:hover { background: #eee; }
+      .baseline-button.active { background: #ddd; border-color: #999; }
+      .comparison-grid-3x2 .viewer { min-height: 180px; }
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./js/three.module.js",
+                "PCDLoader": "./js/PCDLoader.js",
+                "OrbitControls": "./js/OrbitControls.js"
+            }
+        }
+    </script>
+
+    <script src="./js/fontawesome.all.min.js"></script>
+    <script src="./js/pcd-viewer-v5.js" type="module"></script>
+
+    <!--MathJax-->
+    <script>
+      window.MathJax = {
+        loader: {load: ['[tex]/boldsymbol']},
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          packages: {'[+]': ['boldsymbol']}
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+
+  <body>
+    <section class="hero is-landing">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="landing-card">
+            <div class="landing-intro">
+              <h1 class="title is-2 publication-title">
+                ReScene4D: <br />
+                Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes
+              </h1>
+            </div>
+            <div class="authors-block" style="margin-top: 1rem;">
+              <div class="authors-list">
+                <span class="author"><a href="https://easteine.com">Emily Steiner</a><sup>1</sup></span>
+                <span class="author"><a href="https://jianhao-zheng.github.io">Jianhao Zheng</a><sup>1</sup></span>
+                <span class="author"><a href="https://henryhj.github.io">Henry Howard-Jenkins</a><sup>2</sup></span>
+                <span class="author"><a href="https://chrisdxie.github.io">Chris Xie</a><sup>2</sup></span>
+                <span class="author"><a href="https://ir0.github.io">Iro Armeni</a><sup>1</sup></span>
+              </div>
+              <div class="authors-affiliations">
+                <span><sup>1</sup>Stanford University</span>
+                <span><sup>2</sup>Meta Reality Labs Research</span>
+              </div>
+            </div>
+            <div class="conference-badge has-text-centered" aria-label="Publication venue">
+              <span class="conference-name">CVPR 2026</span>
+            </div>
+            <div class="publication-links hero-links">
+              <span class="link-block">
+                <a
+                  href="https://arxiv.org/abs/2601.11508"
+                  rel="noopener noreferrer"
+                  class="external-link button is-normal is-rounded"
+                >
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <span class="external-link button is-normal is-rounded is-static" title="Coming soon">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                </span>
+              </span>
+              <span class="link-block">
+                <span class="external-link button is-normal is-rounded is-static" title="Coming soon">
+                  <span class="icon">&#129303;</span>
+                  <span>Model (coming soon)</span>
+                </span>
+              </span>
+            </div>
+            <div class="tldr-card">
+              <p class="has-text-centered">
+                <strong>ReScene4D</strong> achieves temporally consistent instance segmentation across sparsely captured 3D scans of evolving indoor scenes, with a new <strong>t-mAP</strong> metric and state-of-the-art results on 3RScan.
+              </p>
+            </div>
+            <!-- <div class="tldr-card">
+              <strong>TL;DR:</strong>
+              A point cloud generative model that turns unposed parts into assembled shapes.
+            </div> -->
+          </div>
+          <div class="page-stack">
+
+            <div class="section soft-section" style="margin-top: -2rem;">
+              <div class="container is-max-desktop has-text-centered">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                  <iframe src="https://www.youtube.com/embed/Fl0BVK_lrUw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="section soft-section" style="margin-top: -2rem;">
+              <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-five-fifths">
+                    <div class="">
+                      <h3 class="title is-4 section-title">Abstract</h3>
+                      <div class="has-text-left">
+                        <p>
+                          Indoor environments evolve as objects move, appear, or leave the scene. Capturing these dynamics requires maintaining temporally consistent instance identities across intermittently captured 3D scans, even when changes are unobserved. We introduce and formalize the task of temporally sparse 4D indoor semantic instance segmentation (SIS), which jointly segments, identifies, and temporally associates object instances. This setting poses a challenge for existing 3DSIS methods, which require a discrete matching step due to their lack of temporal reasoning, and for 4D LiDAR approaches, which perform poorly due to their reliance on high-frequency temporal measurements that are uncommon in the longer-horizon evolution of indoor environments. We propose ReScene4D, a novel method that adapts 3DSIS architectures for 4DSIS without needing dense observations. Our method enables temporal information sharing—using spatiotemporal contrastive loss, masking, and serialization—to adaptively leverage geometric and semantic priors across observations. This shared context enables consistent instance tracking and improves standard 3DSIS performance. To evaluate this task, we define a new metric, t-mAP, that extends mAP to reward temporal identity consistency. ReScene4D achieves state-of-the-art performance on the 3RScan dataset, establishing a new benchmark for understanding evolving indoor scenes.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section soft-section" style="margin-top: -2rem; margin-bottom: -2rem; padding-top: 0; padding-bottom: 0;">
+              <div class="container is-max-desktop has-text-centered" style="padding-top: 0; padding-bottom: 0;">
+                <figure class="image is-fullwidth" style="max-width: 75%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0;">
+                  <img
+                    src="./images/teaser.png"
+                    alt="ReScene4D qualitative comparison on 4DSIS"
+                    style="width: 100%; display: block; margin: 0 auto;"
+                    class="framed-image"
+                  >
+                  <figcaption style="margin-top: 0.25rem; margin-bottom: 0;">
+                    <strong>ReScene4D on 4D Semantic Instance Segmentation.</strong> Our method maintains temporally consistent instance identities across multiple observations of a scene (right), while baselines struggle to assign consistent identities for both static and changing objects (left).
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="section soft-section" style="margin-top: -2rem;">
+              <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-five-fifths">
+                    <div class="">
+                      <h3 class="title is-4 section-title">Method</h3>
+                      <div class="columns is-centered has-text-centered" style="margin-top: 1rem;">
+                        <div class="column is-fullwidth">
+                          <div class="publication-teaser">
+                            <img
+                              src="./images/overview.svg"
+                              alt="ReScene4D architecture overview"
+                              class="publication-teaser-img framed-image"
+                              style="width: 100%;"
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="has-text-left mb-2">
+                        <p>
+                          ReScene4D adapts the mask-transformer architecture from Mask3D to <span class="emph">temporally sparse 4D semantic instance segmentation</span>. Given a sequence of 3D scans \(\mathcal{P} = \{P^{(1)}, \ldots, P^{(T)}\}\) of the same indoor scene at different times, we represent the input as a unified spatio-temporal 4D point cloud and extract hierarchical features per stage with a backbone encoder. Spatio-temporal instance queries are refined jointly across all stages via masked cross-attention and self-attention, and the mask module predicts binary instance masks and semantic labels that are consistent across the sequence. We evaluate three feature backbones (Minkowski, Sonata, Concerto) and temporal information-sharing strategies—including contrastive loss, spatio-temporal mask pooling, and spatio-temporal decoder serialization—without relying on geometric overlay or dense temporal sampling assumptions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<div class="section pt-0 soft-section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+              <div class="section" style="margin-top: -4rem;">
+                <div class="container is-max-desktop has-text-centered is-centered">
+              <h2 class="title is-4 has-text-centered section-title">4D Semantic Instance Segmentation Results</h2>
+
+              <p class="has-text-left" style="padding-bottom: 1rem; margin: 0 auto;">
+                We evaluate on the <strong>3RScan</strong> dataset, which contains 478 unique indoor environments captured multiple times (1,428 scans total) with temporally consistent instance-level semantic annotations. We use our proposed <strong>t-mAP</strong> metric, which extends mAP to reward temporal identity consistency across scans, as well as per-stage mAP. ReScene4D outperforms Mask4D, Mask4Former, and Mask3D with post-hoc temporal matching, maintaining consistent instance identities across observations even when objects move or the scene changes.
+              </p>
+
+              <div class="hero teaser gallery-hero" style="margin-top: 1rem;">
+                <div class="is-max-desktop has-text-centered">
+                  <div class="vis-card" style="margin-top: 1rem; width: 100%; padding-top: 1.2rem; padding-bottom: 1rem;">
+                    <div class="controls-bar" style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center; margin-bottom: 0.75rem;">
+                      <div>
+                        <span class="control-label">Scene:</span>
+                        <button class="tab-button" data-obj="scene_1">Scene 1</button>
+                        <button class="tab-button" data-obj="scene_2">Scene 2</button>
+                        <button class="tab-button" data-obj="scene_3">Scene 3</button>
+                        <div class="rotate-controls" style="display: inline-block; margin-left: 1rem;">
+                          <button id="btn-rotate" class="rotate-button">Rotate: On</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="viewers-container">
+                      <!-- JS will inject viewers here when you click a tab -->
+                    </div>
+                    <p class="subtitle is-6" style="color: #666; margin-top: 1rem; font-size: 0.95rem; line-height: 1.2;">
+                      Instance mask predictions: Ground Truth, Baseline (Mask3D with semantic matching), and our method, <strong>ReScene4D</strong>, at two time steps (t₀, t₁). The instance mask colors indicate IDs; the same instances across time share the same color per method but not across methods. Our method outperforms baselines to improve the semantic segmentation of instances with consistent temporal identities for both static and changing objects, across multiple temporal observations of a scene.
+                    </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <section>
+      <div class="container is-max-desktop has-text-centered">
+      <h3 class="title is-4" id="mesh">Stylized Reconstruction</h3>
+        <h3 class="title is-7">Please make sure "use hardware acceleration when available" is enabled for chrome and WebGL is enabled in Safari.</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+
+          <iframe width="960" height="640" src="https://sketchfab.com/playlists/embed?collection=f4c4bcbc9ee94aac81f73b43fbfbb8e0&autostart=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" mozallowfullscreen="true" webkitallowfullscreen="true" width="100%" height="100%" frameborder="0"></iframe>
+        </div></div>
+
+    </section> -->
+    
+    <div class="section soft-section" id="BibTeX" style="margin-top: -30px;">
+      <div class="container is-max-desktop content px-2">
+        <h3 class="title section-title">BibTeX</h3>
+        <pre><code>@inproceedings{steiner2026rescene4d,
+      author = {Steiner, Emily and Zheng, Jianhao and Howard-Jenkins, Henry and Xie, Chris and Armeni, Iro},
+      title = {ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes},
+      booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      year = {2026},
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section soft-section" id="acknowledgements" style="margin-top: -2rem;">
+      <div class="container is-max-desktop content px-2">
+        <h3 class="title section-title">Acknowledgements</h3>
+        <p>
+          This work is supported by the Stanford Institute for Human-Centered Artificial Intelligence (HAI), and E.S. is supported by supported by the TomKat Center for Sustainable Energy as a TomKat Center Graduate Fellow for Translational Research. Stanford’s Marlowe computing clusters provided GPU computing for model training and evaluation.
+        </p>
+      </div>
+    </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="footer pt-4 pb-0">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content has-text-centered">
+              <p>
+                Website template based on
+                <a href="https://github.com/nerfies/nerfies.github.io">
+                  Nerfies
+                </a>
+                and licensed under
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                >
+                  CC-BY-SA-4.0 </a
+                >.
+              </p>
+            </div>
+            <div style="display: none;">
+              <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=70&t=n&d=6WCwDMU1LnufigbJtLnJnd3NXofUi6tlIPZD58PdhFg&co=ffffff&cmo=ffffff&cmn=ffffff&ct=ffffff"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
