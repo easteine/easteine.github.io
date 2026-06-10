@@ -780,7 +780,7 @@ function buildComparisonGrid(objName) {
     cap.style.gridColumn = c + 1;
     cap.style.textAlign = 'center';
     cap.style.fontWeight = 'bold';
-    cap.style.fontSize = '0.9rem';
+    cap.style.fontSize = '1.4rem';
     cap.textContent = c === 1 ? `Baseline` : h;
     grid.appendChild(cap);
   });
@@ -807,7 +807,7 @@ function buildComparisonGrid(objName) {
     wrap.style.gridRow = row + 1;
 
     const rowCap = document.createElement('div');
-    rowCap.style.fontSize = '0.75rem';
+    rowCap.style.fontSize = '1.2rem';
     rowCap.style.marginBottom = '4px';
     rowCap.textContent = label;
     wrap.appendChild(rowCap);
