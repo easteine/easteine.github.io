@@ -205,7 +205,7 @@ main .career-list { padding: 0; }
 .institution-logos img, .institution-logos img:first-child { width: auto; height: 38px; max-width: 95px; }
 .lab-logo-frame { position: relative; display: inline-block; width: 88px; height: 38px; overflow: hidden; flex-shrink: 0; }
 .institution-logos .lab-logo-frame img, .organization-heading .lab-logo-frame img { position: absolute; width: 116px; max-width: none; height: auto; left: -14px; top: -13px; }
-.research-interests { margin: 0 0 32px; color: var(--muted); }
+.research-interests { margin: 0 0 32px; color: var(--ink); }
 .research-interests li { margin-bottom: 5px; }
 .hobby-sections > section { margin-bottom: 34px; }
 .hobby-gallery { display: grid; gap: 12px; align-items: start; }
