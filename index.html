@@ -5,9 +5,12 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Emily Steiner</title>
-        <link rel="stylesheet" href="./css/style.css" />
-	<link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
-	<link rel="icon" type="image/png" href="./images/favicon.png">
+        <meta name="description" content="Emily Steiner is a Stanford PhD candidate studying 3D and 4D scene understanding. Research, experience, and projects beyond the lab.">
+        <link rel="stylesheet" href="./css/notebook.css" />
+        <link rel="stylesheet" href="./css/lab-components.css" />
+        <script src="./js/notebook.js" defer></script>
+	<link rel="icon" type="image/svg+xml" href="./images/favicon.svg?v=2">
+	<link rel="icon" type="image/png" href="./images/favicon.png?v=2">
 	<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 	<!-- Uncomment and add your Google Analytics ID if needed -->
@@ -20,242 +23,125 @@
 	</script> -->
 
     </head>
-    
+
     <body>
 
       <header>
 	<div class="logo">
           <a href="#home">Emily&nbsp;Steiner</a>
 	</div>
-	<nav id="header_nav">
-	  <ul>
-		<li><a href="#research">research</a></li>
-	    <li><a href="#projects">projects</a></li>
-	    <li><a href="#experience">experience</a></li>
-	    <li><a href="#misc">misc</a></li>
-	  </ul>
-	</nav>
+	<nav id="header_nav" aria-label="Main navigation"><ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#research">Research</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#accomplishments">Extra Credit</a></li>
+</ul></nav>
       </header>
-      
+
       <main role="main">
-	<!-- HOME SECTION -->
-	<section id="home">
-	<div class="photo-container">
-		<img class="photo" src="./images/headshot.jpeg" height="340px" alt="Emily Steiner" />
-		<div class="institution-logos">
-			<img src="./images/stanford.png" alt="Stanford University" />
-			<img src="./images/tomkat.png" alt="TomKat Center" />
-			<img src="./images/UniversityOfWaterloo.png" alt="University of Waterloo" />
-		</div>
-	</div>
-	
-        <p>I am a PhD candidate at Stanford University, advised by <a href="https://ir0.github.io" target="_blank">Professor Iro Armeni</a> in the <a href="https://gradientspaces.stanford.edu" target="_blank">Gradient Spaces Lab</a>. 
-		My research focuses on deep learning-based computer vision for understanding evolving 3D scenes over time (4D), spanning both dynamically changing lived-in spaces (robotics and embodied AI) and structurally evolving scenes with large-scale spatio-temporal changes (building construction monitoring). My research is
-	graciously funded by the <a href="https://tomkat.stanford.edu" target="_blank">TomKat Center Graduate Fellowship for Translational Research</a>.</p>
-	
-	<p>Previously, I completed my BASc in Mechatronics Engineering with a Computing Option at the University of Waterloo, graduating with distinction. I gained industry experience through co-op positions in hardware research and software engineering.</p>
+<section id="home" aria-labelledby="home-title">
+<div class="home-banner">
+<div class="banner-copy">
+<h1 id="home-title">Understanding the world<br>through how it changes</h1>
+<p class="research-subtitle"><span>Computer Vision</span> · <span>3D/4D Perception</span> · <span>Representation Learning</span></p>
+</div>
+<div class="photo-carousel" role="region" aria-roledescription="carousel" aria-label="Emily, the lab, and research events"><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="1 of 4"><img src="./images/headshot.jpeg" alt="Emily Steiner" width="7008" height="4672"></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="2 of 4" hidden><img src="./images/organizations/gradient-spaces-group.jpeg" alt="Emily with the Gradient Spaces Lab team at Stanford"></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="3 of 4" hidden><img src="./images/events/rescene4d-poster.jpeg" alt="At the ReScene4D poster presentation at CVPR" width="1024" height="768"></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="4 of 4" hidden><img src="./images/events/cife-talk.jpeg" alt="Presenting research at the CIFE Summer Program" width="1024" height="768"></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous photo">‹</button><button type="button" data-direction="1" aria-label="Next photo">›</button></div></div>
+</div>
+<div class="home-intro">
+<div class="intro-copy">
+<p>I’m Emily, a PhD candidate in Electrical Engineering at Stanford, advised by <a href="https://ir0.github.io" target="_blank">Iro Armeni</a> in the <a href="https://gradientspaces.stanford.edu" target="_blank">Gradient Spaces Lab</a>. My research is supported by a <a href="https://tomkat.stanford.edu/people/emily-steiner">TomKat Graduate Fellowship</a> and a <a href="https://cife.stanford.edu">CIFE Seed Grant</a>.</p>
+<p>I study how machines perceive and represent 3D spaces as they change over time, connecting observations across views and revisits. Through work including <a href="./rescene4d/">ReScene4D</a>, in collaboration with Meta Reality Labs, I develop methods and metrics for understanding evolving scenes. I’m interested in what these changes reveal about how people live in and adapt their spaces, and how we construct the built environment. My work brings together models, data collection, and evaluation to learn from these changes, connecting computer vision with questions in architecture, engineering, and construction.</p>
+<p>Before Stanford, I completed my BASc in Honours Mechatronics Engineering at the University of Waterloo, with a Computing Option, graduating with distinction. During undergrad, I completed six internships spanning aerospace, robotics, imaging, and software engineering. Most recently, I interned at Waymo, working on fine-grained action recognition with vision-language models (VLMs) and data-efficient learning from video.</p>
 
-	<br><br>
+</div>
 
-	<!-- CONTACT SECTION -->
-	<h2>CONTACT</h2>
-	<p>Email: easteine [at] stanford [dot] edu</p>		
-	<p>
-		<a href="https://github.com/easteine">
-		<img class="icon" src="./images/github.png" alt="github link" /> </a> &nbsp;
+</div>
 
-		<a href="https://linkedin.com/in/easteine">
-		<img class="icon" src="./images/in.png" alt="linkedin link" /> </a> &nbsp;
-		
-		<a href="./resume/Emily_Steiner_cv.pdf" target="_blank">
-		<img class="icon" src="./images/cv.png" alt="CV" /> </a>
-	</p>
-	</section>
+		<div class="institution-logos" aria-label="Education, research, support, and collaborations"><a href="https://www.stanford.edu" title="Stanford University · PhD"><img src="./images/stanford.png" alt="Stanford University"></a><a href="https://gradientspaces.stanford.edu" title="Gradient Spaces · Research"><span class="lab-logo-frame"><img src="./images/organizations/gradient-spaces.png" alt="Gradient Spaces"></span></a><a href="https://waymo.com" title="Waymo · Research internship"><img src="./images/organizations/waymo.png" alt="Waymo"></a><a href="./rescene4d/" title="Meta · ReScene4D collaboration"><img src="./images/organizations/meta.png" alt="Meta"></a><a href="https://cife.stanford.edu" title="CIFE · Research support"><img src="./images/organizations/cife.jpg" alt="CIFE"></a><a href="https://tomkat.stanford.edu" title="TomKat Center · Fellowship"><img src="./images/tomkat.png" alt="TomKat Center"></a><a href="https://uwaterloo.ca" title="University of Waterloo · BASc"><img src="./images/UniversityOfWaterloo.png" alt="University of Waterloo"></a></div>
+<div class="contact-links" aria-label="Contact and profiles">
+<a href="mailto:easteine@stanford.edu">Email</a>
+<a href="https://github.com/easteine">GitHub</a>
+<a href="https://linkedin.com/in/easteine">LinkedIn</a>
+<a href="./resume/Emily_Steiner_cv.pdf" target="_blank">CV</a>
+</div>
+<section class="news-section" aria-labelledby="news-title">
+<h2 id="news-title">News</h2>
+<ul class="news-list">
+<li><time datetime="2026-09">Sep 2026</time><p>I led “Defining What Construction AI Needs to See” at the <a href="https://cife.stanford.edu/events/conference-symposium/2026-cife-summer-program">CIFE Summer Program</a>, bringing together 70+ industry participants to help shape computer vision research for construction.</p></li>
+<li><span class="news-date">Jun–Sep 2026</span><p>I interned at Waymo as a Technical Research Intern, working on fine-grained action recognition and data-efficient video learning.</p></li>
+<li><time datetime="2026">2026</time><p><a href="./rescene4d/">ReScene4D</a> is a CVPR 2026 paper on understanding evolving indoor 3D scenes. <a href="https://github.com/GradientSpaces/rescene4d">Code is available</a>.</p></li>
+<li><span class="news-date">Winter 2026</span><p>I was a teaching assistant for <a href="https://gradientspaces.stanford.edu/computer-vision-built-environment">Computer Vision for the Built Environment</a> at Stanford.</p></li>
+<li><span class="news-date">2025–26</span><p>Our project, “Queryable Spatio-Temporal 4D Representation for Construction Progress Monitoring,” received a CIFE Seed Grant, led by Iro Armeni.</p></li>
+<li><time datetime="2025">2025</time><p>I was named a <a href="https://tomkat.stanford.edu/people/emily-steiner">TomKat Graduate Fellow in Translational Research</a>.</p></li>
+</ul>
+</section>
+<h2>Publications</h2>
+<div class="highlight-grid"><article class="lab-card"><img src="./rescene4d/images/teaser.png" alt="ReScene4D predictions compared across changing indoor scenes"><div><p class="tag">CVPR · 2026</p><h3>ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes</h3><p><u>Emily Steiner</u>, Jianhao Zheng, Henry Howard-Jenkins, Chris Xie, Iro Armeni</p><div class="profile-links"><a href="https://arxiv.org/abs/2601.11508">PDF</a><a href="./rescene4d/">Website</a><a href="https://github.com/GradientSpaces/rescene4d">Code</a></div></div><a class="card-link-overlay" href="./rescene4d/" aria-label="ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes"></a></article></div>
+<nav class="personal-note home-section-links" aria-label="Explore the site"><a href="#home">Home ↑</a><a href="#research">Research →</a><a href="#experience">Experience →</a><a href="#accomplishments">Extra Credit →</a></nav>
+</section>
+<section id="research" aria-labelledby="research-title">
+<p class="eyebrow">Research</p><h1 id="research-title">Spatiotemporal Perception and Representation Learning for Changing 3D Scenes</h1>
 
-	<br><br>
+<ul class="research-interests" aria-label="Research interests"><li><strong>Perception:</strong> Spatiotemporal encoders · Motion understanding · Long-term scene understanding · Object recognition and tracking</li><li><strong>Representation:</strong> Geometrically grounded semantic representations · Scene and process modeling</li><li><strong>Learning from Change:</strong> Using change as natural augmentation for robust learning, and as information that reveals patterns in design, use of space, and opportunities to optimize building processes.</li></ul>
+<p>If you find my work interesting and would like to chat, <a href="mailto:easteine@stanford.edu">get in touch</a>.</p>
+<h2>Publications</h2>
+<article class="publication-row"><div class="pub-media"><img src="./rescene4d/images/teaser.png" alt="ReScene4D predictions compared across changing indoor scenes"></div><div><h3>ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes</h3><p><u>Emily Steiner</u>, Jianhao Zheng, Henry Howard-Jenkins, Chris Xie, Iro Armeni</p><p class="pub-venue">CVPR · 2026</p><div class="profile-links"><a href="https://arxiv.org/abs/2601.11508">PDF</a><a href="./rescene4d/">Website</a><a href="https://github.com/GradientSpaces/rescene4d">Code</a></div></div></article>
+<section id="projects" aria-labelledby="selected-projects-title">
+<h2 id="selected-projects-title">Selected Research Projects</h2>
 
-	<!-- RESEARCH SECTION -->
-	<section id="research">
-		<h2>Publications</h2>
-		
-		<p>My current research focuses on 3D/4D scene understanding, spatio-temporal semantic representations, and datasets, benchmarks, and metrics for dynamically changing scenes. If you find my work interesting and would like to chat, feel free to reach out!</p>
-		
-		<br><br>
-		
-		<div class="paper-entry" style="border: 1px dashed rgb(200, 200, 200); border-radius: 8px; padding: 1.2em; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;">
-			<img src="./research/rescene4d/teaser.png" alt="ReScene4D" class="paper-thumb" style="width: 360px; min-width: 360px; max-width: 360px;" />
-			<div class="paper-info">
-				<p><strong>ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes</strong><br>
-				<u>Emily Steiner</u>, Jianhao Zheng, Henry Howard-Jenkins, Chris Xie, Iro Armeni<br>
-				• CVPR, 2026<br>
-				• <a href="https://github.com/GradientSpaces/rescene4d" target="_blank">Code</a> / <a href="./rescene4d/" target="_blank">Project</a> / <a href="https://arxiv.org/abs/2601.11508" target="_blank">arXiv</a> </p>
-			</div>
-		</div>
-		
-		<br><br>
-		
-		<h2>Research Positions</h2>
-		
-		<p><strong>Gradient Spaces Lab</strong> | PhD Candidate | <em>Advisor: Iro Armeni, Stanford University</em><br>
-		<em>April 2024 - present</em> | <a href="https://gradientspaces.stanford.edu" target="_blank">Lab website ↗</a></p>
-		
-		<br>
-		
-		<p><strong>Computational Imaging Lab</strong> | Rotation PhD Student | <em>Advisor: Gordon Wetzstein, Stanford University</em><br>
-		<em>Winter 2024</em> | <a href="https://www.computationalimaging.org" target="_blank">Lab website ↗</a></p>
-	</section>
 
-	<br><br>
-
-	<!-- PROJECTS SECTION -->
-	<section id="projects">
-		<h2>Projects</h2>
-		
-		<div class="projects-grid">
-			<a href="./projects/probe_3dllm/2024_stan_cs468_final_report.pdf" target="_blank" class="project-card">
+<div class="highlight-grid research-cards"><article class="lab-card"><img src="./images/living-spaces-pipeline.svg" alt="Pipeline: repeat LiDAR scans of living spaces, validate with CLIP and Concerto, then collect through a Django backend on AWS" class="project-thumbnail"><div class="project-info"><h3 class="project-name">Crowdsourcing 4D Data from Evolving Living Spaces</h3><p class="project-description">An iOS LiDAR scanning app, automated scan validation, and a cloud backend for collecting indoor spaces as they change.</p></div></article>
+<a href="./projects/probe_3dllm/2024_stan_cs468_final_report.pdf" target="_blank" class="lab-card">
 				<img src="./projects/probe_3dllm/density.png" alt="Probing the Object Awareness of Current 3D LLMs" class="project-thumbnail" />
 				<div class="project-info">
 					<h3 class="project-name">Probing the Object Awareness of Current 3D LLMs</h3>
-					<p class="project-description">Designed and conducted systematic perturbation experiments revealing density-induced hallucination and bottlenecks in object detection capabilities of state-of-the-art 3D-LLM architectures.</p>
+					<p class="project-description">Designed perturbation experiments that identified density-induced hallucination and object detection bottlenecks in 3D language models.</p><span class="card-report">Project report ↗</span>
 				</div>
 			</a>
-			
-			<a href="./projects/open_vocab/CS231A Poster.pptx.pdf" target="_blank" class="project-card">
-				<img src="./projects/open_vocab/overview_nn.png" alt="Towards Open Scene Understanding For Construction Analysis" class="project-thumbnail" />
+<a href="./projects/open_vocab/CS231A Poster.pptx.pdf" target="_blank" class="lab-card">
+				<img src="./projects/open_vocab/overview_nn.png" alt="Towards Open Scene Understanding for Construction Analysis" class="project-thumbnail" />
 				<div class="project-info">
-					<h3 class="project-name">Towards Open Scene Understanding For Construction Analysis</h3>
-					<p class="project-description">Developed an integrated pipeline to lift 2D semantics from foundational vision models into unified 3D mesh representations for zero-shot, query-driven monitoring on dynamic construction datasets.</p>
+					<h3 class="project-name">Towards Open Scene Understanding for Construction Analysis</h3>
+					<p class="project-description">Lifted GroundingDINO, SAM, and CLIP semantics into 3D meshes for zero-shot, query-driven monitoring of changing construction scenes.</p><span class="card-report">Project report ↗</span>
 				</div>
 			</a>
-			
-			<a href="./projects/beamforming/Poster-Steiner.pptx.pdf" target="_blank" class="project-card">
-				<img src="./projects/beamforming/motivation.png" alt="Viability of Eye-Tracking Glasses for Beamforming Hearing-Aids" class="project-thumbnail" />
-				<div class="project-info">
-					<h3 class="project-name">Viability of Eye-Tracking Glasses for Beamforming Hearing-Aids</h3>
-					<p class="project-description">Engineered and simulated a spatial audio steering system using microphone-enabled glasses, demonstrating enhanced source isolation via eye-tracking-driven beamforming for assistive hearing technology.</p>
-				</div>
-			</a>
-			
-			<a href="./projects/drs/" class="project-card">
-				<img src="./projects/drs/9782885C-6769-43A9-8F96-A029FBE96D44.png" alt="Drag Reduction System Automation" class="project-thumbnail" />
-				<div class="project-info">
-					<h3 class="project-name">Drag Reduction System Automation</h3>
-					<p class="project-prize">1st Place Winner of the University of Waterloo Design Analysis Competition Sponsored by Ansys</p>
-					<p class="project-description">Capstone project in collaboration with Williams Racing Formula 1. Designed a system to automate movement between testing positions for the wind tunnel model's drag reduction system without affecting aerodynamic surfaces.</p>
-				</div>
-			</a>
-			
-			<a href="./projects/fog/SYDE_522_Final_Report__Emily_Share_.pdf" target="_blank" class="project-card">
-				<img src="./projects/fog/freeze_event.png" alt="Comparison of ML Techniques for Freezing of Gait Detection" class="project-thumbnail" />
-				<div class="project-info">
-					<h3 class="project-name">Comparison of ML Techniques for Freezing of Gait (FoG) Detection</h3>
-					<p class="project-description">Investigated the trade-offs of various published machine learning techniques for the detection of Freezing of Gait using tri-axial IMU sensors, comparing accuracy, computational complexity, and real-time performance.</p>
-				</div>
-			</a>
-		</div>
-	</section>
+</div></section>
+</section>
+<section id="experience" aria-labelledby="experience-title"><p class="eyebrow">Experience</p><h1 id="experience-title">Background &amp; Experience</h1><nav class="section-links" aria-label="Experience sections"><a href="#education">Education</a><a href="#research-positions">Research</a><a href="#teaching">Teaching</a><a href="#service">Service</a><a href="#industry">My path</a></nav><section id="education"><h2>Education</h2><article class="cv-entry"><p class="entry-date">2023–present</p><div><h3 class="organization-heading"><img src="./images/stanford.png" alt="">Stanford University</h3><p class="entry-role">MS–PhD Candidate · Electrical Engineering</p><p class="entry-summary">Advisor: Iro Armeni, Gradient Spaces Lab. GPA: 4.1.</p></div></article>
+<article class="cv-entry"><p class="entry-date">2018–2023</p><div><h3 class="organization-heading"><img class="school-wordmark" src="./images/UniversityOfWaterloo.png" alt="">University of Waterloo</h3><p class="entry-role">BASc · Honours Mechatronics Engineering · Computing Option · Co-op</p><p class="entry-summary">With Distinction; Dean’s Honour List. Cumulative average: 95.6%.</p></div></article>
+</section><section id="research-positions"><h2>Research Experience</h2><article class="cv-entry"><p class="entry-date">Apr 2024–present</p><div><h3 class="organization-heading"><span class="lab-logo-frame"><img src="./images/organizations/gradient-spaces.png" alt=""></span><a href="https://gradientspaces.stanford.edu">Gradient Spaces Lab · Stanford</a></h3><p class="entry-role">Graduate Research Assistant · Advisor: Iro Armeni</p></div></article><article class="cv-entry"><p class="entry-date">Jun–Sep 2026</p><div><h3 class="organization-heading"><img src="./images/organizations/waymo.png" alt="" width="32" height="32">Waymo</h3><p class="entry-role">Technical Research Intern · Mentor: Chris Ying</p><p class="entry-summary">Worked on fine-grained action recognition with Gemma, LoRA, and JAX; explored hierarchical classification and built temporal annotation tools for data-efficient video learning.</p></div></article>
 
-	<br><br>
+<article class="cv-entry"><p class="entry-date">Winter 2024</p><div><h3 class="organization-heading"><img src="./images/organizations/psai.svg" alt=""><a href="https://psai.stanford.edu/">Physical and Spatial Intelligence Lab · Stanford</a></h3><p class="entry-role">PhD Rotation Student · Advisor: Gordon Wetzstein</p><p class="entry-summary">Compared gaze- and head-steered beamforming for assistive hearing using eye-tracking, microphone-equipped glasses. <a href="./projects/beamforming/Poster-Steiner.pptx.pdf">View project poster ↗</a></p></div></article>
+<article class="cv-entry"><p class="entry-date">Fall 2023</p><div><h3>Molecular Imaging Instrumentation Lab · Stanford</h3><p class="entry-role">PhD Rotation Student · Advisor: Craig Levin</p><p class="entry-summary">Studied conditional GANs for attenuation and scatter correction of multi-energy-window PET data.</p></div></article>
+<article class="cv-entry"><p class="entry-date">May–Aug 2022</p><div><h3 class="organization-heading"><img src="./images/organizations/lumafield.png" alt="" width="32" height="32">Lumafield</h3><p class="entry-role">Hardware Research &amp; Development Engineering Co-op</p><p class="entry-summary">Built a multi-detector CT prototype that doubled capture speed; improved scan-time settings for a separate 3× speed increase without quality loss, deployed to customer machines.</p></div></article></section><section id="misc"><h2 id="teaching">Teaching &amp; Mentorship</h2><article class="cv-entry"><p class="entry-date">Winter 2026</p><div><h3><a href="https://gradientspaces.stanford.edu/computer-vision-built-environment">Computer Vision for the Built Environment</a></h3><p class="entry-role">Teaching Assistant · Stanford CEE 147C/247C</p><p class="entry-summary">Leading a redesign of course materials and assignments for Winter 2027.</p></div></article>
+<article class="cv-entry"><p class="entry-date">2024–present</p><div><h3>Stanford Women in Electrical Engineering</h3><p class="entry-role">Graduate Mentor</p><p class="entry-summary">Faculty Liaison (2024–2026), organizing faculty roundtables; Co-Mentorship Chair (2025–2026), coordinating mentorship and supporting STEM outreach.</p></div></article>
+<article class="cv-entry"><p class="entry-date">2020–2022</p><div><h3>Waterloo Mechatronics Mentorship Program</h3><p class="entry-role">Undergraduate Mentor</p><p class="entry-summary">Supported students through their first internship applications, résumé reviews, and interview preparation.</p></div></article>
+<h2 id="service">Academic Service &amp; Leadership</h2>
+<article class="cv-entry"><p class="entry-date">Sep 2026</p><div><h3>Defining What Construction AI Needs to See</h3><p class="entry-role">Lead Workshop Organizer · CIFE Summer Program</p><p class="entry-summary">Hosted 70+ industry participants to connect construction needs with computer vision research and prioritize useful information from 3D job-site scans.</p></div></article>
+<article class="cv-entry"><p class="entry-date">CVPR 2026</p><div><h3><a href="https://cv4aec.github.io">Computer Vision for the Built World</a></h3><p class="entry-role">Workshop Organizer</p></div></article>
+<article class="cv-entry"><p class="entry-date">ICRA 2025;<br>CVPR 2026</p><div><h3><a href="https://www.nothing-stands-still.com/challenge">Nothing Stands Still</a></h3><p class="entry-role">Challenge Organizer</p></div></article>
 
-	<!-- EXPERIENCE SECTION -->
-	<section id="experience">
-		<section class="experience-section">
-			<h2>Industry Experience</h2>
-			<div class="experience-timeline">
-				<div class="experience-item">
-					<div class="experience-logo">
-						<!-- Add Lumafield logo here if available -->
-					</div>
-					<div class="experience-content">
-						<p class="experience-dates">May - August 2022</p>
-						<h3>Hardware Research & Development Engineering Co-op</h3>
-						<p class="experience-company">Lumafield</p>
-						<p class="experience-description">Investigated CT scanner imaging limitations to characterize the trade-off between sharpness and scan time. Determined system parameter improvements for a 3x speed increase with no loss in quality; changes implemented on customer machines and showcased at trade shows. Created an exploratory multi-detector prototype, developed an image processing pipeline using OpenCV in Python, and implemented a joint iterative calibration algorithm based on current literature. Improved capture speed by 200% with minimal impact on image quality.</p>
-					</div>
-				</div>
-				
-				<div class="experience-item">
-					<div class="experience-logo">
-						<!-- Add Inertia logo here if available -->
-					</div>
-					<div class="experience-content">
-						<p class="experience-dates">January - April 2022</p>
-						<h3>Product Development Intern (Electrical / Mechatronics)</h3>
-						<p class="experience-company">Inertia Product Development</p>
-						<p class="experience-description">Designed and implemented a LiDAR point cloud visualizer using Python and Qt to interface with a Robot Operating System (ROS) backend, enabling real-time visualization of sensor data for autonomous systems development. Conducted feasibility studies for customer projects, using rapid prototyping to evaluate technical approaches and determine optimal solutions for product development success.</p>
-					</div>
-				</div>
-				
-				<div class="experience-item">
-					<div class="experience-logo">
-						<!-- Add Canadensys logo here if available -->
-					</div>
-					<div class="experience-content">
-						<p class="experience-dates">May - August 2021</p>
-						<h3>Aerospace Engineer</h3>
-						<p class="experience-company">Canadensys</p>
-						<p class="experience-description">Designed embedded state machine architecture and PID controller, implementing firmware on an STM32 Microcontroller in C for a high precision BLDC motor controller. Performed control system and stability analysis using Simulink. Conducted root cause analysis to identify a fundamental hardware design error causing unstable motor feedback. Implemented a corrective software algorithm for Hall Effect sensor processing, salvaging the PCB design and avoiding costly hardware redesign.</p>
-					</div>
-				</div>
-				
-				<div class="experience-item">
-					<div class="experience-logo">
-						<!-- Add ExactEarth logo here if available -->
-					</div>
-					<div class="experience-content">
-						<p class="experience-dates">January - April & September - December 2020</p>
-						<h3>Software Engineering Co-op Student</h3>
-						<p class="experience-company">ExactEarth (Spire)</p>
-						<p class="experience-description">Developed autonomous operations management software responsible for communication procedures, telemetry collection, and recovery processes of the EV10 satellite. Supported the software control system throughout satellite commissioning and post-launch operations (launched Sept 2020).</p>
-					</div>
-				</div>
-			</div>
-		</section>
-	</section>
 
-	<br><br>
+</section><section id="industry"><h2>From Robotics to Visual Perception</h2><p>My background is in mechatronics, with six undergraduate internships spanning aerospace, robotics, imaging, and software engineering. I worked on autonomous satellite operations (for a satellite launched in September 2020!), motor control and sensor feedback, LiDAR visualization, and CT imaging. Across these projects, I became increasingly interested in how machines use visual observations to understand their surroundings.</p><ul class="career-list"><li><span>2020</span><div><strong>exactEarth</strong> · Software Engineering Co-op — autonomous satellite operations.</div></li><li><span>2021</span><div><strong>Canadensys</strong> · Aerospace Engineering Intern — lunar robotics and motor control.</div></li><li><span>2022</span><div><strong>Inertia</strong> · Product Development Intern — LiDAR visualization.</div></li><li><span>2022</span><div><strong>Lumafield</strong> · Hardware R&amp;D Co-op — faster CT imaging.</div></li></ul></section></section>
+<section id="accomplishments" aria-labelledby="accomplishments-title">
+<p class="eyebrow">Extra Credit</p><h1 id="accomplishments-title">Things I’m Proud Of</h1><nav class="section-links" aria-label="Extra Credit sections"><a href="#awards">Honours &amp; Awards</a><a href="#hobbies">Hobbies</a><a href="#engineering-projects">Engineering Projects</a></nav><section class="awards-list"><h2 id="awards">Honours &amp; Awards</h2><article class="cv-entry"><p class="entry-date">2025–2027</p><div><h3><a href="https://tomkat.stanford.edu/people/emily-steiner">TomKat Graduate Fellowship for Translational Research</a></h3><p class="entry-role">Stanford University</p></div></article>
+<article class="cv-entry"><p class="entry-date">2023</p><div><h3>Ansys Design Analysis Competition · 1st Place</h3><p class="entry-role">University of Waterloo</p><p class="entry-summary">Drag Reduction System Automation capstone with Williams Racing Formula 1.</p></div></article>
+<article class="cv-entry"><p class="entry-date">2022</p><div><h3><a href="https://uwaterloo.ca/co-operative-education/news/celebrating-outstanding-co-op-students-during-wil-month">Co-op Student of the Year · Honourable Mention</a></h3><p class="entry-role">University of Waterloo</p><p class="entry-summary"><a href="https://uwaterloo.ca/co-operative-education/blog/space-research-engineering-covers-all-grounds">Media profile ↗</a></p></div></article>
+<article class="cv-entry"><p class="entry-date">2019, 2021, 2022</p><div><h3>First in Class Engineering Scholarship</h3><p class="entry-role">University of Waterloo</p></div></article>
 
-	<!-- MISC SECTION -->
-	<section id="misc">
-		<h2>Teaching & Mentorship</h2>
-		<ul>
-			<li><strong>Teaching Assistant</strong>, "Computer Vision for the Built Environment" CEE 247C, Stanford University, Winter 2026. <a href="https://gradientspaces.stanford.edu/computer-vision-built-environment" target="_blank">Course website ↗</a></li>
-			<li><strong>Graduate Mentor</strong>, Stanford Women In Electrical Engineering (WEE), 2024-present.</li>
-			<li><strong>Undergraduate Mentor</strong>, University of Waterloo Mechatronics Mentorship Program, 2020-2022. Guided freshmen engineering students through their first round of internship applications by reviewing resumes, providing interview preparation, and career advice.</li>
-		</ul>
 
-		<br><br>
+<article class="cv-entry"><div><p class="entry-date">2018</p><p class="date-note">... still a highlight</p></div><div><h3>Euclid Mathematics Contest</h3><p class="entry-role">Score: 80 · Top 2% globally</p></div></article></section>
+<h2 id="hobbies">Hobbies</h2><div class="hobby-sections">
+<section><h3>Ceramics</h3><p>I enjoy making ceramics and serve as Inventory Manager for the Stanford Ceramics Club.</p><div class="photo-carousel hobby-carousel" role="region" aria-roledescription="carousel" aria-label="Ceramics photos"><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="1 of 5"><a href="./images/hobbies/ceramics-studio.jpeg" target="_blank"><img src="./images/hobbies/ceramics-studio.jpeg" alt="Throwing a pot on the wheel in the ceramics studio" loading="lazy"></a></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="2 of 5" hidden><a href="./images/hobbies/ceramics-blue-mug.jpeg" target="_blank"><img src="./images/hobbies/ceramics-blue-mug.jpeg" alt="Blue-green glazed ceramic mug" loading="lazy"></a></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="3 of 5" hidden><a href="./images/hobbies/ceramics-red-mug.jpeg" target="_blank"><img src="./images/hobbies/ceramics-red-mug.jpeg" alt="Red and dark blue glazed ceramic mug" loading="lazy"></a></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="4 of 5" hidden><a href="./images/hobbies/ceramics-vessel.jpeg" target="_blank"><img src="./images/hobbies/ceramics-vessel.jpeg" alt="Freshly thrown clay vessel on a pottery wheel" loading="lazy"></a></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="5 of 5" hidden><a href="./images/hobbies/ceramics-vase.jpeg" target="_blank"><img src="./images/hobbies/ceramics-vase.jpeg" alt="Green patterned ceramic vase with flowers" loading="lazy"></a></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous photo">‹</button><button type="button" data-direction="1" aria-label="Next photo">›</button></div></div></section>
+<section><h3>Cycling</h3><p>I ride with the Stanford Cycling Team, where I’m the Outreach Chair and previously served as Women’s Race Captain.</p><div class="photo-carousel hobby-carousel" role="region" aria-roledescription="carousel" data-cycling aria-label="Cycling photos"><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="1 of 2"><a href="./images/hobbies/cycling-road.jpeg" target="_blank"><img src="./images/hobbies/cycling-road.jpeg" alt="Cycling on a tree-lined road" loading="lazy"></a></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="2 of 2" hidden><a href="./images/hobbies/cycling-stanford.jpeg" target="_blank"><img src="./images/hobbies/cycling-stanford.jpeg" alt="Riding in Stanford cycling kit at the Marin Century" loading="lazy"></a></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous photo">‹</button><button type="button" data-direction="1" aria-label="Next photo">›</button></div></div></section>
+</div>
+<section class="build-project"><h2 id="engineering-projects">Engineering Projects</h2><div class="highlight-grid engineering-grid"><article class="lab-card engineering-card"><div class="photo-carousel drs-carousel" role="region" aria-roledescription="carousel" aria-label="Drag Reduction System project photos"><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="1 of 2"><a href="./projects/drs/9782885C-6769-43A9-8F96-A029FBE96D44.png" target="_blank"><img src="./projects/drs/9782885C-6769-43A9-8F96-A029FBE96D44.png" alt="The Drag Reduction System team with their capstone project" loading="lazy"></a></div><div class="photo-slide" role="group" aria-roledescription="slide" aria-label="2 of 2" hidden><a href="./images/events/drs-award.jpeg" target="_blank"><img src="./images/events/drs-award.jpeg" alt="The DRS team receiving the 2023 Ansys Design Analysis Competition award" loading="lazy"></a></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous photo">‹</button><button type="button" data-direction="1" aria-label="Next photo">›</button></div></div><div class="engineering-card-copy"><h3>Drag Reduction System Automation</h3><p class="project-prize">1st Place · University of Waterloo Design Analysis Competition, sponsored by Ansys</p><p>Capstone with Williams Racing Formula 1: automated repositioning of a wind-tunnel model’s drag reduction system without disturbing its aerodynamic surfaces.</p><p><a href="./projects/drs/">Explore the project →</a></p></div></article></div></section>
+<!-- Future: add a Side Projects section with GitHub links, including the ride calendar app. -->
+</section>
+</main>
 
-		<h2>Leadership & Involvement</h2>
-		<ul>
-			<li><strong>Stanford Women In Electrical Engineering (WEE)</strong>, 2023-present.
-				<ul>
-					<li><strong>Faculty Liaison</strong> (2024-26): Responsible for organizing quarterly faculty roundtables.</li>
-					<li><strong>Co-Mentorship Chair</strong> (2025-26): Co-organizer and mentor in the mentorship program and volunteer at STEM education outreach events (Stanford SPLASH, SLAC community day).</li>
-				</ul>
-			</li>
-			<li><strong>ICRA 2025 Challenge Organizer</strong>, Nothing Stands Still Challenge Hosted by Hilti, 2025. <a href="https://www.nothing-stands-still.com/challenge" target="_blank">Challenge website ↗</a></li>
-			<li><strong>Stanford Cycling Team</strong>, Women's Road Captain, 2026.</li>
-			<li><strong>Athena</strong>, Workplace Under-Represented Genders in Tech Group, 2022.</li>
-		</ul>
-
-		<br><br>
-
-		<h2>Honours & Awards</h2>
-		<ul>
-			<li><strong>TomKat Graduate Fellow in Translational Research</strong>, Stanford University, 2025. <a href="https://tomkat.stanford.edu/people/emily-steiner" target="_blank">TomKat Center profile ↗</a></li>
-			<li><strong>Co-Operative Education Student of the Year Honourable Mention</strong>, University of Waterloo, 2022. <a href="https://uwaterloo.ca/co-operative-education/news/celebrating-outstanding-co-op-students-during-wil-month" target="_blank">News article ↗</a>, <a href="https://uwaterloo.ca/co-operative-education/blog/space-research-engineering-covers-all-grounds" target="_blank">Media Profile ↗</a></li>
-			<li><strong>First In Class Engineering Scholarship</strong>, University of Waterloo, 2019, 2021, 2022.</li>
-			<li><strong>President's International Experience Award</strong>, University of Waterloo, 2019.</li>
-			<li><strong>President's Scholarship of Distinction</strong>, University of Waterloo, 2018.</li>
-		</ul>
-	</section>
-
-	<br><br>
-      </main>
-      
       <footer>
-		
+
       </footer>
     </body>
 </html>

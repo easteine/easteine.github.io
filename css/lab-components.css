@@ -1,0 +1,149 @@
+/* Components reused from gradientspaces/styles.css and script.js.
+   Keep the lab's 16:10 media frames, card structure, padding, and link treatment. */
+@font-face { font-family: 'Source Sans 3'; src: url('../assets/fonts/source-sans-3-latin-normal.woff2') format('woff2'); font-style: normal; font-weight: 200 900; font-display: swap; }
+.lab-card, .publication-row { --paper: #fff; --soft: #f5f6f8; --blue: #405f83; font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.5; color: var(--muted); }
+.highlight-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.lab-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card-link-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.lab-card .profile-links {
+  position: relative;
+  z-index: 2;
+}
+
+.lab-card:hover {
+  transform: translateY(-3px);
+  border-color: rgb(198, 198, 192);
+  box-shadow: 0 12px 28px rgba(46, 45, 41, 0.09);
+}
+
+.lab-card img,
+.lab-card video,
+.lab-card canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.lab-card:hover img,
+.lab-card:hover video,
+.lab-card:hover canvas {
+  transform: scale(1.025);
+}
+
+.lab-card > div {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lab-card h3,
+.research-row h3,
+.publication-row h3 {
+  margin: 8px 0 10px;
+}
+
+.lab-card h3 {
+  min-height: 5.25em;
+}
+
+.publication-row {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.2s ease;
+}
+
+.publication-row:hover {
+  background: var(--soft);
+}
+
+.publication-row h3 {
+  margin: 8px 0 10px;
+}
+
+.publication-row p {
+  font-size: 0.95rem;
+}
+
+.publication-row .pub-venue {
+  font-size: 0.85rem;
+}
+
+.publication-row .profile-links {
+  font-size: 0.88rem;
+}
+
+.pub-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.pub-media img,
+.pub-media video,
+.pub-media canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pub-venue {
+  font-size: 0.85rem;
+}
+.lab-card { padding: 0; text-decoration: none; }
+.lab-card h3, .publication-row h3 { font-family: 'Source Sans 3', sans-serif; font-size: 1.05rem; font-weight: 700; line-height: 1.15; color: var(--ink); letter-spacing: 0; }
+.lab-card h3 { font-size: 19px; }
+.lab-card p { margin: 0 0 22px; }
+.lab-card .tag { color: var(--accent); text-transform: uppercase; font-size: 13px; font-weight: 800; letter-spacing: 1px; margin-bottom: 0; }
+.lab-card .project-thumbnail { max-width: none; max-height: none; padding: 0; background: var(--surface); }
+.lab-card .project-description { font-size: 17px; line-height: 1.5; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; }
+.profile-links a, .card-report { color: var(--ink); font-weight: 700; text-decoration: none; }
+.profile-links a:hover { color: var(--accent); text-decoration: underline; }
+.card-report { margin-top: auto; padding-top: 14px; font-size: 15px; }
+.publication-row { grid-template-columns: minmax(180px, 38%) minmax(0,1fr); border-top: 0; }
+.publication-row p { margin: 0 0 18px; }
+.publication-row .pub-venue { letter-spacing: 0; font-family: inherit; }
+@media (max-width: 700px) { .highlight-grid { grid-template-columns: 1fr; } .publication-row { grid-template-columns: minmax(100px, 32%) minmax(0,1fr); gap: 14px; } .publication-row h3 { font-size: 17px; } .publication-row p { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { .lab-card, .lab-card img { transition: none; } .lab-card:hover, .lab-card:hover img { transform: none; } }
+.publication-row .pub-venue { margin-top: 10px; color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+.research-cards { grid-template-columns: repeat(3,minmax(0,1fr)); }
+@media (max-width: 700px) { .research-cards { grid-template-columns: 1fr; } }
+.engineering-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.engineering-card > .photo-carousel { display: block; flex: none; padding: 0; margin: 0; }
+.engineering-card .photo-slide img { aspect-ratio: 16 / 10; object-fit: cover; border-radius: 0; }
+.engineering-card:hover .photo-slide img { transform: none; }
+.engineering-card .carousel-controls { padding: 3px; }
+.engineering-card h3 { min-height: 0; font-size: 19px; }
+.engineering-card p { font-size: 14px; line-height: 1.6; margin-bottom: 14px; }
+.engineering-card .project-prize { font-size: 12px; }
+.engineering-card-copy > p:last-child { margin-bottom: 0; }
+#home .lab-card > img[src$="teaser.png"], .pub-media img[src$="teaser.png"] { object-fit: contain; }
+#home .lab-card:hover > img[src$="teaser.png"] { transform: none; }
+@media (max-width: 700px) { .engineering-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,16 @@
+/* Detail pages share the personal notebook shell. */
+.back-link { display: inline-block; font-size: 13px; margin-bottom: 28px; }
+.project-deck { font-size: 18px; color: var(--muted); max-width: 620px; }
+.project-award { border-left: 3px solid var(--accent); padding-left: 16px; font-size: 14px; margin: 24px 0; }
+.project-detail .drs-carousel { margin: 28px 0 20px; }
+.resource-links { display: flex; flex-wrap: wrap; gap: 12px 24px; border-bottom: 1px solid var(--line); padding-bottom: 24px; font-size: 14px; }
+.project-detail section { margin-top: 36px; }
+.project-detail section > h2:first-child { font-size: 29px; margin-bottom: 18px; }
+.project-facts { border-top: 1px solid var(--line); font-size: 14px; }
+.project-facts > div { display: grid; grid-template-columns: 80px 1fr; gap: 20px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.project-facts dt { color: var(--muted); }
+.project-facts dd { margin: 0; }
+.poster-preview { border: 1px solid var(--line); border-radius: 5px; }
+.poster-preview summary { cursor: pointer; padding: 14px 18px; color: var(--accent); }
+.poster-preview iframe { display: block; border: 0; border-top: 1px solid var(--line); width: 100%; height: 680px; }
+@media (max-width: 700px) { .poster-preview iframe { height: 450px; } .project-deck { font-size: 16px; } }

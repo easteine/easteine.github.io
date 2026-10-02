@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+<title>Collecting evolving living spaces</title><desc>Repeated iOS LiDAR scans pass through automated validation and a Django backend on AWS to form a collection of spaces over time.</desc>
+<rect width="640" height="400" fill="#f1f5fa"/>
+<g font-family="Arial, sans-serif" fill="#405f83"><text x="28" y="35" font-size="12" letter-spacing="2">FROM EVERYDAY SPACES TO 4D DATA</text></g>
+<g stroke="#8ea7bf" stroke-width="2" stroke-linejoin="round"><path d="M39 136 101 100 161 135 99 171Z" fill="white"/><path d="M39 136v61l60 35 62-36v-61M99 171v61"/><path d="m68 159 30-18 29 17-30 18Z" fill="#a8c8d7"/><path d="M68 159v19l29 17 30-18v-19M97 176v19"/>
+<path d="m45 253 57-33 58 33-58 33Z" fill="white"/><path d="M45 253v36l57 32 58-33v-35M102 286v35"/><path d="m105 259 25-14 18 11-25 14Z" fill="#edc974"/><path d="M105 259v17l18 10 25-14v-16M123 270v16"/></g>
+<g font-family="Arial,sans-serif" fill="#405f83" font-size="12"><text x="34" y="91">Visit 1</text><text x="34" y="218">Visit 2</text></g>
+<path d="M173 194h37m-8-7 8 7-8 7M369 194h34m-8-7 8 7-8 7" stroke="#405f83" stroke-width="2"/>
+<rect x="223" y="124" width="136" height="139" rx="12" fill="white" stroke="#b9c9d9"/>
+<circle cx="291" cy="164" r="20" fill="#e4eef7"/><path d="m280 164 8 8 15-17" stroke="#405f83" stroke-width="3"/>
+<rect x="417" y="124" width="192" height="139" rx="12" fill="white" stroke="#b9c9d9"/>
+<g stroke="#405f83" stroke-width="2"><ellipse cx="513" cy="151" rx="24" ry="8"/><path d="M489 151v30c0 11 48 11 48 0v-30M489 166c0 11 48 11 48 0"/></g>
+<g font-family="Arial,sans-serif" text-anchor="middle"><g fill="#2b3038" font-size="16"><text x="291" y="213">Validate scans</text><text x="513" y="213">Build the collection</text></g><g fill="#626a75" font-size="12"><text x="291" y="236">CLIP / Concerto</text><text x="513" y="236">Django / AWS</text><text x="103" y="346">iOS LiDAR · Swift / ARKit</text></g></g>
+</svg>
